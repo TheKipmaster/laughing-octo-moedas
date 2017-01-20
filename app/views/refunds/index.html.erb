@@ -1,0 +1,20 @@
+<h1>Listando reembolsos</h1>
+
+<table>
+  <tr>
+    <th>Valor</th>
+    <th>Descrição</th>
+  </tr>
+
+  <% @refunds.each do |refund| %>
+    <tr>
+      <td><%= refund.value %></td>
+      <td><%= refund.description %></td>
+      <td><%= link_to 'Show', refund_path(refund) %></td>
+      <td><%= link_to 'Edit', edit_refund_path(refund) %></td>
+      <td><%= link_to 'Destroy', refund_path(refund),
+              method: :delete,
+              data: {confirm: 'Tem certeza?'}%></td>
+    </tr>
+  <% end %>
+</table>
