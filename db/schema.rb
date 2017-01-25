@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(version: 20170120002529) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.boolean  "admin"
-    t.string   "name"
-    t.string   "lastname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "refunds", force: :cascade do |t|
     t.string   "value"
     t.string   "description"
     t.boolean  "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.boolean  "admin"
+    t.string   "name"
+    t.string   "lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
