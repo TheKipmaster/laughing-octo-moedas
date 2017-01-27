@@ -8,4 +8,9 @@
   <%= @refund.description %>
 </p>
 
-<%= link_to 'Back', refunds_path %>
+<p>
+  <b>Status: </b>
+  <%= @refund.status %>
+</p>
+
+<%= link_to 'Back', user_refunds_path %>
