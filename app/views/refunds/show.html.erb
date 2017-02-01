@@ -13,4 +13,13 @@
   <%= @refund.status %>
 </p>
 
+<h4>Avatar vários tamanhos</h4>
+Thumb:
+<%= image_tag(@user.avatar.thumb) if @user.avatar %>
+Medium:
+<%= image_tag(@user.avatar.medium) if @user.avatar %>
+Big:
+<%= image_tag(@user.avatar.big) if @user.avatar %>
+<hr />
+
 <%= link_to 'Back', user_refunds_path %>
