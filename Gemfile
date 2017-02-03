@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Image manipulation gems
+gem 'mini_magick', '~> 4.3'
+gem 'carrierwave', '~> 1.0'
+# User Authentication gem
 gem 'devise'
 gem 'cancancan'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
