@@ -16,6 +16,10 @@
     <%= f.check_box :admin %>
   </div>
   <div class="field">
+    <%= f.label :foto %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -24,8 +28,17 @@
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :nucleo %><br>
     <%= select("nucleo_id", options_for_select([['NUT', 1], ['NDP', 2], ['NAM', 3], ['NOE', 4]])) %>
+=======
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+>>>>>>> c7a2d0b38393532f3ff9ee8cdf695dfb53ce53ef
   </div>
   <div class="actions">
     <%= f.submit %>
