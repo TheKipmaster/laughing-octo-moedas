@@ -16,6 +16,18 @@ ActiveRecord::Schema.define(version: 20170201212534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cargos", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nucleos", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "refunds", force: :cascade do |t|
     t.string   "value"
     t.string   "description"
@@ -44,10 +56,19 @@ ActiveRecord::Schema.define(version: 20170201212534) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "avatar"
+    t.integer  "user_id"
+    t.integer  "nucleo_id"
+    t.integer  "cargo_id"
   end
 
+  add_index "users", ["cargo_id"], name: "index_users_on_cargo_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["nucleo_id"], name: "index_users_on_nucleo_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
   add_foreign_key "refunds", "users"
+  add_foreign_key "users", "cargos"
+  add_foreign_key "users", "nucleos"
+  add_foreign_key "users", "users"
 end
