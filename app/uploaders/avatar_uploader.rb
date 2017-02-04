@@ -2,7 +2,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Adiciona o MiniMagick para permitir o redimensionamento das imagens
   include CarrierWave::MiniMagick
 
-  storage :file
+  storage :aws
 
   # Local onde serão guardadas as imagens
   def store_dir

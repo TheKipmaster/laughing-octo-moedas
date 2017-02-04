@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Image manipulation gems
 gem 'mini_magick', '~> 4.3'
 gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-aws'
 # User Authentication gem
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
