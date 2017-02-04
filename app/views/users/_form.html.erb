@@ -16,6 +16,10 @@
     <%= f.check_box :admin %>
   </div>
   <div class="field">
+    <%= f.label :autorizado %><br>
+    <%= f.check_box :autorizado %>
+  </div>
+  <div class="field">
     <%= f.label :foto %><br>
     <%= f.file_field :avatar %>
   </div>
@@ -26,6 +30,14 @@
   <div class="field">
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
   </div>
   <div class="actions">
     <%= f.submit %>
