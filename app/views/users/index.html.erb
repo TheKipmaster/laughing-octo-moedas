@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Admin</th>
+      <th>Autorizado</th>
       <th>Name</th>
       <th>Lastname</th>
       <th>Email</th>
@@ -15,6 +16,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.admin %></td>
+        <td><%= user.autorizado %></td>
         <td><%= user.name %></td>
         <td><%= user.lastname %></td>
         <td><%= user.email %></td>
