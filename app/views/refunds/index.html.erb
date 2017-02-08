@@ -4,14 +4,20 @@
   <tr>
     <th>Valor</th>
     <th>Descrição</th>
+    <th>Status</th>
+    <th>Saldo da Conta</th>
   </tr>
 
   <% @refunds.each do |refund| %>
     <tr>
       <td><%= refund.value %></td>
       <td><%= refund.description %></td>
+      <td><%= refund.status %></td>
+      <td><%= refund.quantidade_moedas %></td>
       <td><%= link_to 'Show', user_refund_path(@user, refund) %></td>
-      <td><%= link_to 'Edit', edit_user_refund_path(@user, refund) %></td>
+      <% if can? :edit, Refund %>
+        <td><%= link_to 'Edit', edit_user_refund_path(@user, refund) %></td>
+      <% end %>
       <td><%= link_to 'Destroy', user_refund_path(@user, refund),
               method: :delete,
               data: {confirm: 'Tem certeza?'}%></td>
