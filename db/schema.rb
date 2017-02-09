@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170201212534) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.integer  "user_id"
     t.integer  "nucleo_id"
     t.integer  "cargo_id"
     t.string   "avatar"
@@ -64,8 +65,10 @@ ActiveRecord::Schema.define(version: 20170201212534) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["nucleo_id"], name: "index_users_on_nucleo_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
   add_foreign_key "refunds", "users"
   add_foreign_key "users", "cargos"
   add_foreign_key "users", "nucleos"
+  add_foreign_key "users", "users"
 end

@@ -10,19 +10,6 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-<p>
-  <strong>Nucleo:</strong>
-  <%= @user.nucleo_id %>
-</p>
-<p>
-  <strong>Cargo:</strong>
-  <%= @user.cargo_id %>
-</p>
-
 
 <p>
   <strong>Email:</strong>
@@ -40,4 +27,6 @@ Big:
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> |
-<%= link_to 'Novo Reembolso', new_user_refund_path(@user) %>
+<% if can? :create, Refund %>
+  <%= link_to 'Novo Reembolso', new_user_refund_path(@user) %>
+<% end %>
