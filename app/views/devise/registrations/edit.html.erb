@@ -27,6 +27,13 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :nucleo %><br>
+    <%= f.select :nucleo_id, Nucleo.all.map { |n| [n.nome, n.id] } %>
+  </div>
+
+
+
 
 
   <div class="actions">
