@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :refunds
   resources :nucleos
+  resources :cargos
   resources :users do
     resources :refunds
   end

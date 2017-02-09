@@ -32,6 +32,11 @@
     <%= f.select :nucleo_id, Nucleo.all.map { |n| [n.nome, n.id] } %>
   </div>
 
+  <div class="field">
+    <%= f.label :cargo %><br>
+    <%= f.select :cargo_id, Cargo.all.map { |n| [n.nome, n.id] } %>
+  </div>
+
 
 
 
