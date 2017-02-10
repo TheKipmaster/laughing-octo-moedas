@@ -1,0 +1,11 @@
+<% unless @user.autorizado? %>
+
+  <h1>Não é possível acessar a sua conta</h1>
+  <p>Sua conta precisa ser approvada por um administrador antes que voce possa começar a usar o sistema</p>
+
+<% else %>
+
+  <h1>Acesso Negado</h1>
+  <p>Você não tem permissão para acessar esse recurso.</p>
+
+<% end %>
