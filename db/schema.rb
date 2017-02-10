@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170203183824) do
+ActiveRecord::Schema.define(version: 20170210113736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,21 +55,19 @@ ActiveRecord::Schema.define(version: 20170203183824) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.integer  "user_id"
     t.integer  "nucleo_id"
     t.integer  "cargo_id"
     t.string   "avatar"
     t.boolean  "autorizado",             default: false
+    t.string   "cpf"
   end
 
   add_index "users", ["cargo_id"], name: "index_users_on_cargo_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["nucleo_id"], name: "index_users_on_nucleo_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
   add_foreign_key "refunds", "users"
   add_foreign_key "users", "cargos"
   add_foreign_key "users", "nucleos"
-  add_foreign_key "users", "users"
 end
