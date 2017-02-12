@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :refunds, dependent: :destroy
+  has_many :conta_bancarium
   belongs_to :nucleo
   belongs_to :cargo
   mount_uploader :avatar, AvatarUploader

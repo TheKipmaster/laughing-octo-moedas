@@ -11,16 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210113736) do
+ActiveRecord::Schema.define(version: 20170212231337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bancos", force: :cascade do |t|
+    t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cargos", force: :cascade do |t|
     t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "conta_bancaria", force: :cascade do |t|
+    t.string   "agencia"
+    t.string   "conta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "banco_id"
+  end
+
+  add_index "conta_bancaria", ["banco_id"], name: "index_conta_bancaria_on_banco_id", using: :btree
+  add_index "conta_bancaria", ["user_id"], name: "index_conta_bancaria_on_user_id", using: :btree
 
   create_table "nucleos", force: :cascade do |t|
     t.string   "nome"
@@ -69,6 +87,8 @@ ActiveRecord::Schema.define(version: 20170210113736) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
+  add_foreign_key "conta_bancaria", "bancos"
+  add_foreign_key "conta_bancaria", "users"
   add_foreign_key "refunds", "users"
   add_foreign_key "users", "cargos"
   add_foreign_key "users", "nucleos"
