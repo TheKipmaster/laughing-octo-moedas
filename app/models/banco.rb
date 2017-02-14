@@ -1,3 +1,3 @@
 class Banco < ActiveRecord::Base
-  has_many :conta_bancarium
+  has_many :conta_bancaria
 end

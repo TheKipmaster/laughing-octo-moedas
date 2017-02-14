@@ -30,6 +30,11 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Bonificacao: </strong>
+  <%= @user.moedas %>
+</p>
+
 <h4>Avatar vários tamanhos</h4>
 Thumb:
 <%= image_tag(@user.avatar.thumb) if @user.avatar %>
