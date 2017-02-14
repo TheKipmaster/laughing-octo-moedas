@@ -49,6 +49,6 @@ class RefundsController < ApplicationController
       @user = current_user
     end
     def refund_params
-      params.require(:refund).permit(:value, :description, :photo)
+      params.require(:refund).permit(:value, :description, :status, :quantidade_moedas, :photo)
     end
 end

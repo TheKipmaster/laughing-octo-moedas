@@ -13,6 +13,12 @@
   <%= @refund.status %>
 </p>
 
+<p>
+  <b>quantidade_moedas: </b>
+  <%= @refund.quantidade_moedas %>
+</p>
+
+
 <h4>Avatar vários tamanhos</h4>
 Thumb:
 <%= image_tag(@refund.photo.thumb) if @refund.photo %>

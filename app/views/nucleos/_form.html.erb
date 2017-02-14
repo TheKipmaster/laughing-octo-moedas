@@ -1,0 +1,21 @@
+<%= form_for(@nucleo) do |f| %>
+  <% if @nucleo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nucleo.errors.count, "error") %> prohibited this nucleo from being saved:</h2>
+
+      <ul>
+      <% @nucleo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

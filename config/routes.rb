@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'refunds#index'
+  root 'users#index'
   devise_for :users, path: 'u'
+  resources :nucleos
+  resources :cargos
   resources :users do
     resources :refunds
   end

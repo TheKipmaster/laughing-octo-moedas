@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Nucleos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nucleos.each do |nucleo| %>
+      <tr>
+        <td><%= nucleo.nome %></td>
+        <td><%= link_to 'Show', nucleo %></td>
+        <td><%= link_to 'Edit', edit_nucleo_path(nucleo) %></td>
+        <td><%= link_to 'Destroy', nucleo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nucleo', new_nucleo_path %>
