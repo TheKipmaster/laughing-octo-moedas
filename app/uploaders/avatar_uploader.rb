@@ -4,7 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   storage :file
 
-  # Local onde serão guardadas as imagens
+  # Local onde será guardado as imagens
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
