@@ -8,7 +8,7 @@
     <th>Saldo da Conta</th>
   </tr>
 
-  <% @refunds.each do |refund| %>
+  <% @user.refunds.each do |refund| %>
     <tr>
       <td><%= refund.value %></td>
       <td><%= refund.description %></td>

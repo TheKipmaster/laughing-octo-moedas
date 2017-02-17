@@ -21,11 +21,11 @@
 
 <h4>Avatar vários tamanhos</h4>
 Thumb:
-<%= image_tag(@user.avatar.thumb) if @user.avatar %>
+<%= image_tag(@refund.photo.thumb) if @refund.photo %>
 Medium:
-<%= image_tag(@user.avatar.medium) if @user.avatar %>
+<%= image_tag(@refund.photo.medium) if @refund.photo %>
 Big:
-<%= image_tag(@user.avatar.big) if @user.avatar %>
+<%= image_tag(@refund.photo.big) if @refund.photo %>
 <hr />
 
-<%= link_to 'Back', refunds_url %>
+<%= link_to 'Back', user_refunds_path %>
