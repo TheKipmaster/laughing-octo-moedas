@@ -1,4 +1,4 @@
-<%= form_for [@user, @user.refunds.build] do |f| %>
+<%= form_for [@user, @refund] do |f| %>
 
   <% if @refund.errors.any? %>
     <div id="error_explanation">

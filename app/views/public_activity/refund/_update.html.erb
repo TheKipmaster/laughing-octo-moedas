@@ -1,6 +1,8 @@
 <div class="activity">
-  <% if a.trackable_type == 'status'  %>
+  <% if a.trackable  %>
     <%= activity.owner ? activity.owner.name : 'Guest' %>
     editou um <%= link_to 'reembolso', user_refund_path(@user, a.trackable) %>
+  <% else %>
+    O reembolso editado foi deletado ):
   <% end %>
 </div>
