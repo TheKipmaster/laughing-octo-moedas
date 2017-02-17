@@ -44,3 +44,7 @@ Big:
 <% if can? :create, Refund %>
   <%= link_to 'Novo Reembolso', new_user_refund_path(@user) %>
 <% end %>
+
+<h1>Feed</h1>
+
+<%= render_activities(@activities) %>

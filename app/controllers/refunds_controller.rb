@@ -14,7 +14,6 @@ class RefundsController < ApplicationController
   end
 
   def edit
-    @refund = @user.refunds.find(params[:id])
   end
 
   def create
