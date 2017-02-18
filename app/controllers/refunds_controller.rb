@@ -14,7 +14,7 @@ class RefundsController < ApplicationController
   end
 
   def edit
-    @refund = Refund.find(params[:id])
+    @refund = @user.refunds.find(params[:id])
   end
 
   def create
@@ -49,6 +49,6 @@ class RefundsController < ApplicationController
       @user = current_user
     end
     def refund_params
-      params.require(:refund).permit(:value, :description, :status)
+      params.require(:refund).permit(:value, :description, :status, :quantidade_moedas, :photo)
     end
 end
