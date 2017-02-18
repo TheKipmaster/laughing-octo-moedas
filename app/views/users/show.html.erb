@@ -30,6 +30,11 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Bonificacao: </strong>
+  <%= @user.moedas %>
+</p>
+
 <h4>Avatar vários tamanhos</h4>
 Thumb:
 <%= image_tag(@user.avatar.thumb) if @user.avatar %>
@@ -39,7 +44,9 @@ Big:
 <%= image_tag(@user.avatar.big) if @user.avatar %>
 <hr />
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<% if can? :edit, User %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
 <%= link_to 'Back', users_path %> |
 <% if can? :create, Refund %>
   <%= link_to 'Novo Reembolso', new_user_refund_path(@user) %>
