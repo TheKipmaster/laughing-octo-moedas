@@ -31,7 +31,7 @@ class RefundsController < ApplicationController
     @refund = Refund.find(params[:id])
 
     if @refund.update(refund_params)
-      redirect_to @refund
+      redirect_to user_refund_path
     else
       render 'edit'
     end
