@@ -1,6 +1,7 @@
 class RefundsController < ApplicationController
   load_and_authorize_resource
   before_action :set_user
+
   def index
     @refunds = Refund.all
   end
@@ -14,7 +15,6 @@ class RefundsController < ApplicationController
   end
 
   def edit
-    @refund = @user.refunds.find(params[:id])
   end
 
   def create
@@ -28,7 +28,7 @@ class RefundsController < ApplicationController
   end
 
   def update
-    @refund = Refund.find(params[:id])
+    @refund = @user.refunds.find(params[:id])
 
     if @refund.update(refund_params)
       redirect_to user_refund_path
@@ -49,6 +49,6 @@ class RefundsController < ApplicationController
       @user = current_user
     end
     def refund_params
-      params.require(:refund).permit(:value, :description, :status, :quantidade_moedas, :photo)
+      params.require(:refund).permit(:value, :description, :status, :quantidade_moedas, :photo, :user_id)
     end
 end
