@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'mini_magick', '~> 4.3'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws'
+# Feed creation gem
+gem 'public_activity'
 # User Authentication gem
 gem 'devise'
 gem 'cancancan'
